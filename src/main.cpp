@@ -1,26 +1,32 @@
-#include <osgEarth/MapNode>
-#include <osgEarth/TMS>
-#include <osgEarth/EarthManipulator>
-#include <osgEarth/GLUtils>
+#include <iostream>
 #include <osg/ArgumentParser>
-#include <osgViewer/Viewer>
+#include "option/Option.h"
 
 int main(int argc, char** argv)
 {
-    osgEarth::initialize();
-    
-    osg::ArgumentParser args(&argc, argv);
-    osgViewer::Viewer viewer(args);
-    viewer.setRealizeOperation(new osgEarth::GL3RealizeOperation());
-    
-    auto imagery = new osgEarth::TMSImageLayer();
-    imagery->setURL("https://readymap.org/readymap/tiles/1.0.0/7/");
-    
-    auto mapNode = new osgEarth::MapNode();
-    mapNode->getMap()->addLayer(imagery);
-    
-    viewer.setSceneData(mapNode);
-    viewer.setCameraManipulator(new osgEarth::EarthManipulator(args));
-    
-    return viewer.run();
+    osg::ArgumentParser arguments(&argc, argv);
+    Options options;
+
+    if (printHelp(arguments)) {
+        return 0;
+    }
+
+    if (!parseOptions(arguments, options)) {
+        return 1;
+    }
+
+    std::cout
+        << "Parsed:\n"
+        << options.altitude << " \n"
+        << options.latitude << " \n"
+        << options.longitude << " \n"
+        << options.yaw << " \n"
+        << options.pitch << " \n"
+        << options.roll << " \n"
+        << options.width << " \n"
+        << options.height << " \n"
+        << options.outputFile << " \n"
+        << options.earthFile << " \n";
+
+    return 0;
 }

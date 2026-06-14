@@ -1,7 +1,16 @@
 cmake_minimum_required(VERSION 3.20)
-project(myApp)
+
+project(osgearth-flyby)
+
+# Compile osgEarth yourself and put it above root directory of this project
 set(osgEarth_DIR "../osgearth/build")
 find_package(osgEarth CONFIG REQUIRED)
-add_executable(myApp src/main.cpp)
-target_link_libraries(myApp PRIVATE osgEarth::osgEarth)
-install(TARGETS myApp RUNTIME DESTINATION bin)
+
+add_executable(osgearth-flyby
+    src/main.cpp
+    src/option/Option.cpp
+)
+
+target_link_libraries(osgearth-flyby PRIVATE osgEarth::osgEarth)
+
+install(TARGETS osgearth-flyby RUNTIME DESTINATION bin)
