@@ -16,6 +16,11 @@ cmake --build . --config Release
 
 Из-за особенностей рендеринга osgEarth существует параметр `--render-seconds`, нужный, чтобы osgEarth успел отрисовать изображение. Его значение по умолчанию составляет 30 секунд.
 
+Пример команды:
+```
+./osgearth-flyby --earth ../example/osm.earth --altitude 100 --latitude 59.9375 --longitude 30.3068 --yaw 0 --pitch -25 --roll 0 --output output.png
+```
+
 # Сохранение в ОЗУ
 Сохранение в ОЗУ работает исключительно на Linux, так как сохраняет изображение в `/dev/shm`. 
 
