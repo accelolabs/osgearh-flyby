@@ -32,4 +32,4 @@ cat /dev/shm/<shared> | magick -depth 8 -size <height>x<width> rgba:- -flip outp
 
 # Примеры изображений
 
-TODO
+![output image](example/output.png)
