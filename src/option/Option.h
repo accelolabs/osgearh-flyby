@@ -20,6 +20,7 @@ struct Options {
     int height = 512;
 
     double fov = 45;
+    int renderSeconds = 10;
 };
 
 bool printHelp(osg::ArgumentParser &arguments);

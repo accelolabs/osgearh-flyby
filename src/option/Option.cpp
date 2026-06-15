@@ -18,7 +18,8 @@ bool printHelp(osg::ArgumentParser &arguments) {
             << "    --height <int>       Output image height (512)\n"
             << "    --fov <deg>          Virtual camera FOV (45)\n"
             << "    --output <file>      Output file (none)\n"
-            << "    --shared <str>       Output shared name (none)\n";
+            << "    --shared <str>       Output shared name (none)\n"
+            << "    --secs <int>         Seconds to render an image (10)\n";
         return true;
     }
 
@@ -64,6 +65,8 @@ bool parseOptions(osg::ArgumentParser &arguments, Options &options) {
 
     arguments.read("--output", options.outputFile);
     arguments.read("--shared", options.sharedName);
+
+    arguments.read("--secs", options.renderSeconds);
 
     return true;
 }

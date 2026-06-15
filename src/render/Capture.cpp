@@ -62,7 +62,7 @@ osg::ref_ptr<osg::Image> capture(
 
     viewer.realize();
 
-    prepareHeadlessScene(viewer, 30);
+    prepareHeadlessScene(viewer, options.renderSeconds);
 
     viewer.stopThreading();
 

@@ -14,11 +14,12 @@ cmake --build . --config Release
 # Использование
 Используйте команду `--help`, чтобы посмотреть доступные опции. Некоторые из них обязательны. Для работы программы обязателен `.earth` файл, есть `example/osm.earth` для тестирования работы программы.
 
-Из-за особенностей рендеринга osgEarth существует параметр `--render-seconds`, нужный, чтобы osgEarth успел отрисовать изображение. Его значение по умолчанию составляет 30 секунд.
+Из-за особенностей рендеринга osgEarth существует параметр `--render-seconds`, нужный, чтобы osgEarth успел отрисовать изображение. Его значение по умолчанию составляет 10 секунд.
 
 Пример команды:
 ```
-./osgearth-flyby --earth ../example/osm.earth --altitude 100 --latitude 59.9375 --longitude 30.3068 --yaw 0 --pitch -25 --roll 0 --output output.png
+./osgearth-flyby --earth ../example/osm.earth --altitude 100 --latitude 59.9375 --longitude 30.3068 --yaw 0 --pitch -25 --roll 0 --output output.png 
+--shared OSG_shared
 ```
 
 # Сохранение в ОЗУ
