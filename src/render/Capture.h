@@ -4,6 +4,7 @@
 #include <osg/ref_ptr>
 #include "../option/Option.h"
 
+
 osg::ref_ptr<osg::Image> capture(
     osg::Node* scene,
     const Options& options,
@@ -11,4 +12,3 @@ osg::ref_ptr<osg::Image> capture(
     const osg::Vec3d& viewDirWorld,
     const osg::Vec3d& upDirWorld
 );
-

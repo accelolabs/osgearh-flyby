@@ -1,5 +1,6 @@
 #include "Context.h"
 
+
 osg::ref_ptr<osg::GraphicsContext> createContext(int width, int height) {
     osg::ref_ptr<osg::GraphicsContext::Traits> traits = new osg::GraphicsContext::Traits();
 

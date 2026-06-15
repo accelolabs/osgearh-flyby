@@ -3,6 +3,7 @@
 #include <osg/Vec3d>
 #include "../option/Option.h"
 
+
 bool getCameraVectors(
     const Options& options,
     osg::Vec3d& cameraPosWorld,

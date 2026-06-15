@@ -5,6 +5,7 @@
 #include <osgEarth/GeoData>
 #include <osgEarth/SpatialReference>
 
+
 void rotateBasis(osg::Vec3d& v1, osg::Vec3d& v2, const osg::Vec3d& axis, double degrees) {
     osg::Quat rotation(osg::DegreesToRadians(degrees), axis);
     v1 = rotation * v1;

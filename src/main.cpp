@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include <osg/ArgumentParser>
 #include <osg/Node>
 #include <osgEarth/Common>
@@ -6,6 +7,7 @@
 #include <osgDB/WriteFile>
 #include <osgEarth/MapNode>
 #include "option/Option.h"
+
 #include "render/Camera.h"
 #include "render/Capture.h"
 
