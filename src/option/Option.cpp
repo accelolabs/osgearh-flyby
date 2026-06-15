@@ -16,7 +16,8 @@ bool printHelp(osg::ArgumentParser &arguments) {
             << "Optional arguments:\n"
             << "    --width <int>        Output image width (512)\n"
             << "    --height <int>       Output image height (512)\n"
-            << "    --output <file>      Otput file (flyby.png)\n";
+            << "    --fov <deg>          Virtual camera FOV (45)\n"
+            << "    --output <file>      Output file (flyby.png)\n";
         return true;
     }
 
@@ -57,6 +58,8 @@ bool parseOptions(osg::ArgumentParser &arguments, Options &options) {
 
     arguments.read("--width", options.width);
     arguments.read("--height", options.height);
+
+    arguments.read("--fov", options.fov);
 
     arguments.read("--output", options.outputFile);
 

@@ -17,6 +17,8 @@ struct Options {
 
     int width = 512;
     int height = 512;
+
+    double fov = 45;
 };
 
 bool printHelp(osg::ArgumentParser &arguments);
