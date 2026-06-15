@@ -26,10 +26,9 @@ cmake --build . --config Release
 
 Тестовая команда для того, чтобы считать изображение из оперативной памяти. Требует установки пакета imagemagick.
 ```
-cat /dev/shm/OSG_Capture_Memory | magick -depth 8 -size 512x512 rgba:- -flip output_from_ram.jpg
+cat /dev/shm/<shared> | magick -depth 8 -size <height>x<width> rgba:- -flip output_from_ram.jpg
 ```
-Размер изображения следует изменить, если в аргументах был указан размер, отличный от размера по умолчению.
-
+Вместо `<shared>`, `<height>` и `<width>` следует подставить параметры, переданные в утилиту.
 
 # Примеры изображений
 

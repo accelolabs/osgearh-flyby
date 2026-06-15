@@ -12,6 +12,7 @@ add_executable(osgearth-flyby
     src/render/Capture.cpp
     src/render/Camera.cpp
     src/render/Context.cpp
+    src/output/Memory.cpp
 )
 
 target_link_libraries(osgearth-flyby PRIVATE osgEarth::osgEarth)

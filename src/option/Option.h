@@ -6,6 +6,7 @@
 struct Options {
     std::string earthFile = "";
     std::string outputFile = "";
+    std::string sharedName = "";
 
     double altitude = 0.0;
     double latitude = 0.0;

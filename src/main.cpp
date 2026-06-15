@@ -8,9 +8,9 @@
 #include <osgEarth/MapNode>
 #include "option/Option.h"
 
+#include "output/Memory.h"
 #include "render/Camera.h"
 #include "render/Capture.h"
-
 
 int main(int argc, char** argv)
 {
@@ -57,8 +57,22 @@ int main(int argc, char** argv)
         return 1;
     }
 
-    osgDB::writeImageFile(*image, options.outputFile);
-    
-    std::cout << "Wrote image to " << options.outputFile << "\n";
+    if (options.outputFile == "" && options.sharedName == "") {
+        std::cerr << "Please pick at least one output method.\n";
+        return 1;
+    }
+
+    if (options.outputFile != "") {
+        osgDB::writeImageFile(*image, options.outputFile);
+        std::cout << "Wrote image to " << options.outputFile << "\n";
+    }
+
+    if (options.sharedName != "") {
+        if (!linuxSaveToShm(image, options.sharedName)) {
+            std::cerr << "Failed to save to shared memory.\n";
+            return 1;
+        }
+    }
+
     return 0;
 }
