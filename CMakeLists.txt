@@ -9,6 +9,9 @@ find_package(osgEarth CONFIG REQUIRED)
 add_executable(osgearth-flyby
     src/main.cpp
     src/option/Option.cpp
+    src/render/Capture.cpp
+    src/render/Camera.cpp
+    src/render/Context.cpp
 )
 
 target_link_libraries(osgearth-flyby PRIVATE osgEarth::osgEarth)

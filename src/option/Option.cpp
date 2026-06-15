@@ -17,7 +17,7 @@ bool printHelp(osg::ArgumentParser &arguments) {
             << "    --width <int>        Output image width (512)\n"
             << "    --height <int>       Output image height (512)\n"
             << "    --fov <deg>          Virtual camera FOV (45)\n"
-            << "    --output <file>      Output file (flyby.png)\n";
+            << "    --output <file>      Output file (none)\n";
         return true;
     }
 

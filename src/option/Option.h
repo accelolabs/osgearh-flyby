@@ -5,7 +5,7 @@
 
 struct Options {
     std::string earthFile = "";
-    std::string outputFile = "flyby.png";
+    std::string outputFile = "";
 
     double altitude = 0.0;
     double latitude = 0.0;
